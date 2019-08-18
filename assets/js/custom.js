@@ -1,5 +1,5 @@
 carouselFun = function (folder) {
-    source = '/assets/img/';
+    source = './assets/img/';
     fetch(source + folder).then((res) => res.text()).then(res => {
         let allFiles = res.toString();
         let pos = allFiles.indexOf('mainPage')
@@ -21,7 +21,6 @@ carouselFun = function (folder) {
             pos = allFiles.indexOf(folder)
             pos1 = allFiles.indexOf('"', pos)
 
-
             li[i] = document.createElement('li');
             li[i].setAttribute('data-target', "#carouselExampleIndicators")
             li[i].setAttribute('data-slide-to', i)
@@ -40,7 +39,6 @@ carouselFun = function (folder) {
 
             carouselItem[i].append(img[i])
             carouselInner.append(carouselItem[i])
-
 
             OL.appendChild(li[i]);
 
